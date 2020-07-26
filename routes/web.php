@@ -20,3 +20,7 @@ Route::get('/', function () {
 
 //Using UserController at index
 Route::get('/user', 'UserController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
