@@ -1,3 +1,3 @@
 <div class="title m-b-md">
-                    Tanacom Limited Home
+                 <h2>  Welcome Home </h2>
                 </div>
