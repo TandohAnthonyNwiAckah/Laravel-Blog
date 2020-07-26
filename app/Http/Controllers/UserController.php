@@ -20,7 +20,7 @@ class UserController extends Controller
         $data = [
             'name' => 'TONY',
             'email'=>'tony@tanacom.io',
-            'password'=> bcrypt('password'),
+            'password'=> 'password',
         ];
 
 

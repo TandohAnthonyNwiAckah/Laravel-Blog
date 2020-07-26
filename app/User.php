@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        // 'password', 'remember_token',
     ];
 
     /**
@@ -36,4 +36,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    /***
+     * Define mutator for Password
+     * 
+     * 
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+
+
+/**
+ * Define my Accessor
+ * 
+ */
+    public function getNameAttribute($name)
+{
+    return 'My name is : '. ucfirst($name);
+}
+
+
+
+
+
 }
