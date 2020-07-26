@@ -15,6 +15,17 @@ class UserController extends Controller
     public function index()
     {
 
+        //MASS ASSIGNMENT
+
+        $data = [
+            'name' => 'TONY',
+            'email'=>'tony@tanacom.io',
+            'password'=> bcrypt('password'),
+        ];
+
+
+        User::create($data);
+
 
      
         //ELOQUENT ORM CRUD
@@ -35,18 +46,16 @@ class UserController extends Controller
 
         //UPDATE
 
-        User::where('id',4)-> update(['name' => 'Tanacom']);
+        // User::where('id',4)-> update(['name' => 'Tanacom']);
 
 
-        // //SELECT
+        // // //SELECT
         $user  = User::all();
         return $user ;
        
         
         //DELETE
         // User::where('id',2)-> delete();
-
-
 
 
 
