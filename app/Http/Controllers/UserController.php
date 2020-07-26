@@ -10,7 +10,9 @@ class UserController extends Controller
 
     public function index()
     {
-       return 'Hello World';
+    //    return 'Hello World';
+
+       return view('home');
     }
 
 
