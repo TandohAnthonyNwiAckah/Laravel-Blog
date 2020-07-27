@@ -28,6 +28,17 @@
                 
                 </div>
 
+
+
+              @elseif (session()->has('error'))
+
+                <div class="alert alert-danger">
+                    
+                    {{session('error')}}
+                
+                </div>
+
+
                 @endif
 
                 <form action= "/upload" method = "post" enctype="multipart/form-data">

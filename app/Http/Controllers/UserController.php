@@ -99,16 +99,11 @@ class UserController extends Controller
         
          User::uploadAvatar($req->image);
 
-         session()->put('message','Image uploaded sucessfully.');
-
-        return redirect()->back(); // sucessful
+        return redirect()->back()->with('message', 'Image uploaded sucessfully.'); // sucessful
 
         }
 
-
-        session()->put('message', 'Image uploading failed.');
-
-        return redirect()->back(); // failed
+        return redirect()->back()->with('error', 'Image uploading failed.'); // failed
     }
 
 
