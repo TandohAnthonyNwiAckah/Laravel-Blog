@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 //Using UserController at index
 Route::get('/user', 'UserController@index');
 
