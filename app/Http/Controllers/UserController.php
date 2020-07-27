@@ -104,7 +104,7 @@ class UserController extends Controller
 
             $req->image->storeAs('images', $filename, 'public');
 
-            User::find(1)->update(['avatar' => $filename]);
+            auth()->user->update(['avatar' => $filename]);
 
         }
 
