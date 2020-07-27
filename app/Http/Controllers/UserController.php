@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
+
 
 use App\User;
+use Illuminate\Contracts\Session\Session;
 
 class UserController extends Controller
 {
@@ -91,25 +92,25 @@ class UserController extends Controller
     }
 
 
-
-
     public function uploadAvatar(Request $req)
     {
 
         if($req->hasFile('image')){
+        
+         User::uploadAvatar($req->image);
 
-            // dd($req->image->getClientOriginalName());
+         session()->put('message','Image uploaded sucessfully.');
 
-            $filename = $req->image->getClientOriginalName();
-
-            $req->image->storeAs('images', $filename, 'public');
-
-            auth()->user->update(['avatar' => $filename]);
+        return redirect()->back(); // sucessful
 
         }
 
-        return redirect()->back();
+
+        session()->put('message', 'Image uploading failed.');
+
+        return redirect()->back(); // failed
     }
+
 
 
 

@@ -18,10 +18,17 @@
                 </div>
 
 
-
-
                 <div class="card-body">
 
+                @if (session()->has('message'))
+
+                <div class="alert alert-success">
+                    
+                    {{session('message')}}
+                
+                </div>
+
+                @endif
 
                 <form action= "/upload" method = "post" enctype="multipart/form-data">
 

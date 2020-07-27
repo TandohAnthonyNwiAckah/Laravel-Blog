@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Self_;
 
 class User extends Authenticatable
 {
@@ -39,28 +41,50 @@ class User extends Authenticatable
 
 
 
-//     /***
-//      * Define mutator for Password
-//      * 
-//      * 
-//      */
-//     public function setPasswordAttribute($password)
-//     {
-//         $this->attributes['password'] = bcrypt($password);
-//     }
+    //     /***
+    //      * Define mutator for Password
+    //      * 
+    //      * 
+    //      */
+    //     public function setPasswordAttribute($password)
+    //     {
+    //         $this->attributes['password'] = bcrypt($password);
+    //     }
 
 
 
-// /**
-//  * Define my Accessor
-//  * 
-//  */
-//     public function getNameAttribute($name)
-// {
-//     return 'My name is : '. ucfirst($name);
-// }
+    // /**
+    //  * Define my Accessor
+    //  * 
+    //  */
+    //     public function getNameAttribute($name)
+    // {
+    //     return 'My name is : '. ucfirst($name);
+    // }
 
 
+
+    public static function uploadAvatar($avatar)
+    {
+
+        $filename = $avatar->getClientOriginalName();
+
+        (new self)->deletedOldAvatar();
+
+        $avatar->storeAs('images', $filename, 'public');
+
+        auth()->user()->update(['avatar' => $filename]);
+
+    }
+
+
+    protected function deletedOldAvatar()
+    {
+        if(auth()->user()->avatar) {
+
+            Storage::delete('/public/images/' . auth()->user()->avatar);
+        }
+    }
 
 
 
