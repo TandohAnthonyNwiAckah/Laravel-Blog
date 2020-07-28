@@ -20,26 +20,14 @@
 
                 <div class="card-body">
 
-                @if (session()->has('message'))
 
-                <div class="alert alert-success">
-                    
-                    {{session('message')}}
+                {{-- @@include('layouts.flash')
                 
-                </div>
-
-
-
-              @elseif (session()->has('error'))
-
-                <div class="alert alert-danger">
-                    
-                    {{session('error')}}
                 
-                </div>
+            --}}
 
-
-                @endif
+               <x-flasher/>
+                
 
                 <form action= "/upload" method = "post" enctype="multipart/form-data">
 
