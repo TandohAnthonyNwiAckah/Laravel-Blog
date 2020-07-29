@@ -19,6 +19,11 @@
     <div class="text-center  pt-20">
     <h1 class="text-2xl">Create A Todos</h1>
 
+
+    {{-- <x-flasher/>  --}}
+
+    @include('layouts.flash')
+
     <form class="py-5" method="post" action="/todos/create">
            @csrf
 

@@ -32,10 +32,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route for Upload images.
 Route::post('/upload','UserController@uploadAvatar');
 
+Route::get('/todos', 'TodoController@index')->name('todos');
 
-Route::get('/todos', 'TodoController@index');
-
-Route::get('/todos/create','TodoController@create');
+Route::get('/todos/create','TodoController@create')->name('todos-create');
 
 Route::post('/todos/create', 'TodoController@store');
 
