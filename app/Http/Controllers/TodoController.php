@@ -68,10 +68,14 @@ public function create()
 
 
     
-    public function edit($id)
+    // public function edit($id)
+    public function edit(Todo $todo)
     {
 
-        $todo = Todo::find($id);
+
+        // dd($todo->title);
+
+        // $todo = Todo::find($id);
 
         // return $todo;
 
@@ -80,7 +84,15 @@ public function create()
 
 
 
+   public function update(Request $req,Todo $todo)
+   {
+       
+   
+    $todo->update(['title'=>$req->title]);
 
+     return redirect(route('todos'))->with('message','Updated successfully');
+
+   }
 
 
 
