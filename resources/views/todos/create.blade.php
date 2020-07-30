@@ -5,9 +5,12 @@
 
 
 @section('contents')
-    <div class="text-center  pt-20">
+
+
     <h1 class="text-2xl">Create A Todos</h1>
 
+
+  
 
     {{-- <x-flasher/>  --}}
 
@@ -21,5 +24,9 @@
           <input type="submit" value="Create" class="p-4 border rounder"/>
 
     </form>
+
+
+
+    <a href="/todos" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a>
     
 @endsection

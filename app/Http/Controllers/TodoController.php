@@ -67,13 +67,20 @@ public function create()
     }
 
 
-
     
-    
-    public function edit()
+    public function edit($id)
     {
-        return view('todos.edit');
+
+        $todo = Todo::find($id);
+
+        // return $todo;
+
+        return view('todos.edit',compact('todo'));
     }
+
+
+
+
 
 
 
