@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Todo;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\TodoCreateRequest;
+// use Illuminate\Support\Facades\Validator;
 
 class TodoController extends Controller
 {
@@ -33,27 +33,25 @@ public function create()
 }
 
 
- public function store(Request $request){
+ public function store(TodoCreateRequest $request){
     //    dd($request->all());
 
+    // $rules = [
 
-    $rules = [
+    //         'title' => 'required|max:255',
+    // ];
 
-            'title' => 'required|max:255',
-    ];
+    // $message =[
+    //     'title.max' => 'Todo tilte should not be greater than 255 character',
+    // ];
 
-
-    $message =[
-        'title.max' => 'Todo tilte should not be greater than 255 character',
-    ];
-
-    $validator = Validator::make($request->all(),$rules,$message);
+    // $validator = Validator::make($request->all(),$rules,$message);
 
 
-    if($validator->fails()){
+    // if($validator->fails()){
         
-        return redirect()->back()->withErrors($validator)->withInput();
-    }
+    //     return redirect()->back()->withErrors($validator)->withInput();
+    // }
 
     // $request->validate([
     //     'title'=>'required|max:255',
@@ -84,7 +82,7 @@ public function create()
 
 
 
-   public function update(Request $req,Todo $todo)
+   public function update(TodoCreateRequest $req,Todo $todo)
    {
        
    
