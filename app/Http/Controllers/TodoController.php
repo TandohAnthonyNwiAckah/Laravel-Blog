@@ -13,7 +13,10 @@ class TodoController extends Controller
     {
 
 
-       $todos = Todo::all();
+    //    $todos = Todo::all();
+
+        $todos = Todo::orderby('completed')->get();
+
 
 
     //    return $todos;

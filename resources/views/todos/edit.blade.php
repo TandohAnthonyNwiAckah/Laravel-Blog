@@ -5,7 +5,7 @@
 
 @section('contents')
 
-    <h1 class="text-2xl">Update Todo</h1>
+    <h1 class="text-2xl border-b pb-4">Update Todo</h1>
 
     {{-- <x-flasher/>  --}}
 

@@ -7,7 +7,7 @@
 @section('contents')
 
 
-    <h1 class="text-2xl">Create A Todos</h1>
+    <h1 class="text-2xl border-b pb-4">Create A Todos</h1>
 
     {{-- <x-flasher/>  --}}
 
