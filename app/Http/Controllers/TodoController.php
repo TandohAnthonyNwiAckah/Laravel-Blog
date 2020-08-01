@@ -98,4 +98,18 @@ public function create()
 
 
 
+
+   public function complete(Todo $todo)
+   {
+       # code...
+
+       $todo->update(['completed' => true]);
+
+        return redirect(route('todos'))->with('message', 'Completed task');
+
+
+   }
+
+
+
 }

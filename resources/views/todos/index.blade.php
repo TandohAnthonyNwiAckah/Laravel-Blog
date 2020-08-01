@@ -51,19 +51,31 @@
     
    @else
 
-   <span class="fa fa-check text-gray-400  cursor-pointer px-2" />
+   <span onclick="event.preventDefault; document.getElementById('formid-{{$todo->id}}').submit()" class="fa fa-check text-gray-400  cursor-pointer px-2" />
+
+
+
+
+<form style="display: none" id="{{'formid-'.$todo->id}}" method="post" action="{{route('todos.complete',$todo->id)}}">
+           @csrf
+           @method('put')
+{{-- 
+          <input type="text" name="title" class="py-4 px-4 border rounder" />
+
+          <input type="submit" value="Create" class="p-4 border rounder"/> --}}
+
+    </form>
+
+
+
+
  
    @endif
 
-
 </div>
-
 </li>
-    
 @endforeach
-
 </ul>
-
     <a href="/" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a>
     
 @endsection

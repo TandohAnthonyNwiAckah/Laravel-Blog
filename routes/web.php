@@ -40,6 +40,9 @@ Route::post('/todos/create', 'TodoController@store');
 
 Route::patch('/todos/{todo}/update', 'TodoController@update')->name('todos.update');
 
+
+Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.complete');
+
 // Route::get('/todos/{id}/edit', 'TodoController@edit');
 
 Route::get('/todos/{todo}/edit', 'TodoController@edit');
