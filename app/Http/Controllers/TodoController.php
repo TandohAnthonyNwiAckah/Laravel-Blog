@@ -105,10 +105,21 @@ public function create()
 
        $todo->update(['completed' => true]);
 
-        return redirect(route('todos'))->with('message', 'Completed task');
+        return redirect(route('todos'))->with('message', 'Task Completed');
 
 
    }
+
+
+
+    public function incomplete(Todo $todo)
+    {
+        # code...
+
+        $todo->update(['completed' => false]);
+
+        return redirect(route('todos'))->with('message', 'Task Incomplete');
+    }
 
 
 
