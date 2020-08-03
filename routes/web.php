@@ -44,6 +44,8 @@ Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.com
 
 Route::delete('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todos.incomplete');
 
+Route::delete('/todos/{todo}/delete', 'TodoController@delete')->name('todos.delete');
+
 // Route::get('/todos/{id}/edit', 'TodoController@edit');
 
 Route::get('/todos/{todo}/edit', 'TodoController@edit');

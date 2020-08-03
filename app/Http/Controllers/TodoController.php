@@ -123,4 +123,15 @@ public function create()
 
 
 
+
+    public function delete(Todo $todo)
+    {
+      
+        $todo->delete();
+
+        return redirect(route('todos'))->with('message', 'Task Deleted');
+    }
+
+
+
 }
