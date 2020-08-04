@@ -24,28 +24,30 @@ Route::get('/user', 'UserController@index');
 // Contain all Route for Authentications/
 Auth::routes();
 
-
 // Contain  Route for the Home.
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 // Route for Upload images.
 Route::post('/upload','UserController@uploadAvatar');
 
-Route::get('/todos', 'TodoController@index')->name('todos');
 
-Route::get('/todos/create','TodoController@create')->name('todos-create');
+Route::resource('/todos','TodoController');
 
-Route::post('/todos/create', 'TodoController@store');
+// Route::get('/todos', 'TodoController@index')->name('todos');
 
-Route::patch('/todos/{todo}/update', 'TodoController@update')->name('todos.update');
+// Route::get('/todos/create','TodoController@create')->name('todos-create');
+
+// Route::post('/todos/create', 'TodoController@store');
+
+// Route::get('/todos/{todo}/edit', 'TodoController@edit');
+
+// Route::patch('/todos/{todo}/update', 'TodoController@update')->name('todos.update');
+
+// Route::delete('/todos/{todo}/delete', 'TodoController@desttroy')->name('todos.delete');
+
+
+
 
 Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.complete');
 
 Route::delete('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todos.incomplete');
-
-Route::delete('/todos/{todo}/delete', 'TodoController@delete')->name('todos.delete');
-
-// Route::get('/todos/{id}/edit', 'TodoController@edit');
-
-Route::get('/todos/{todo}/edit', 'TodoController@edit');

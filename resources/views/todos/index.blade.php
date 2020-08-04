@@ -7,7 +7,7 @@
 
     <h1 class="text-2xl">Todos Lists</h1>
 
-    <a href="/todos/create" class="mx-5  py-2  text-pink-400 cursor-pointer">
+    <a href="{{route('todos.create')}}" class="mx-5  py-2  text-pink-400 cursor-pointer">
 
         <span class="fa fa-plus-circle"/>
     
@@ -48,7 +48,7 @@
  <div>
 
 
-   <a href="{{'/todos/'.$todo->id.'/edit'}}"  class="text-yellow-400 cursor-pointer text-white">
+   <a href="{{route('todos.edit', $todo->id)}}"  class="text-yellow-400 cursor-pointer text-white">
 
 
    <span class="fa fa-edit text-orange-400 px-2" />
@@ -65,7 +65,7 @@
   />
 
 
-   <form style="display: none" id="{{'formtrashid-'.$todo->id}}" method="post" action="{{route('todos.delete',$todo->id)}}">
+   <form style="display: none" id="{{'formtrashid-'.$todo->id}}" method="post" action="{{route('todos.destroy',$todo->id)}}">
            @csrf
            @method('delete')
     </form>

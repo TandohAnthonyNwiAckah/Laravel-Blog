@@ -13,7 +13,7 @@
 
     @include('layouts.flash')
 
-    <form class="py-5" method="post" action="/todos/create">
+    <form class="py-5" method="post" action="{{route('todos.store')}}">
            @csrf
 
           <input type="text" name="title" class="py-4 px-4 border rounder" />
@@ -24,6 +24,6 @@
 
 
 
-    <a href="/todos" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a>
+    <a href="{{route('todos.index')}}" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a>
     
 @endsection
