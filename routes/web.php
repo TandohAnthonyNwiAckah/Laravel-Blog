@@ -21,6 +21,17 @@ Route::get('/', function () {
 // Using UserController at index.
 Route::get('/user', 'UserController@index');
 
+
+
+// Route::middleware('auth')->group(
+// function()
+//     {
+        Route::resource('/todos', 'TodoController');
+        Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.complete');
+        Route::delete('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todos.incomplete');
+//     }
+// );
+
 // Contain all Route for Authentications/
 Auth::routes();
 
@@ -29,9 +40,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route for Upload images.
 Route::post('/upload','UserController@uploadAvatar');
-
-
-Route::resource('/todos','TodoController');
 
 // Route::get('/todos', 'TodoController@index')->name('todos');
 
@@ -45,9 +53,3 @@ Route::resource('/todos','TodoController');
 
 // Route::delete('/todos/{todo}/delete', 'TodoController@desttroy')->name('todos.delete');
 
-
-
-
-Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.complete');
-
-Route::delete('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todos.incomplete');

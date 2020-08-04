@@ -7,6 +7,11 @@ use App\Http\Requests\TodoCreateRequest;
 class TodoController extends Controller
 {
 
+     public function __construct()
+     {
+         $this->middleware('auth')->except('index');
+     }
+
     //
     public function index()
     {
