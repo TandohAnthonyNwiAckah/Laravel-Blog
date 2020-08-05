@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use phpDocumentor\Reflection\Types\Self_;
+use App\Todo;
 
 class User extends Authenticatable
 {
@@ -84,6 +85,12 @@ class User extends Authenticatable
 
             Storage::delete('/public/images/' . auth()->user()->avatar);
         }
+    }
+
+
+    public function todos()
+    {
+       return $this->hasMany(Todo::class);
     }
 
 
