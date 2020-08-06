@@ -22,7 +22,11 @@
 
 <ul class="my-8">
 
-@foreach ($todos as $todo )
+{{-- @if($todos->count() > 0) --}}
+    
+{{-- @foreach ($todos as $todo ) --}}
+
+@forelse ($todos as $todo )
 
 <li class="flex justify-between px-2 py-2">
 
@@ -73,7 +77,20 @@
 
 </div>
 </li>
-@endforeach
+
+{{-- @endforeach
+   --}}
+
+
+{{-- @else --}}
+
+@empty
+    
+<p>No task available. Create one</p>
+
+{{-- @endif --}}
+
+@endforelse
 
 </ul>
 

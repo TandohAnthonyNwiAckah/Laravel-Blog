@@ -5,7 +5,21 @@
 
 @section('contents')
 
-    <h1 class="text-2xl border-b pb-4">Update Todo</h1>
+    <div class="flex justify-between border-b pb-4 px-4">
+
+    <h1 class="text-2xl">Update Todo</h1>
+
+    {{-- <h1 class="text-2xl">Create A Todos</h1> --}}
+
+
+   <a href="{{route('todos.index')}}" class="mx-5  py-2  text-pink-400 cursor-pointer">
+
+        <span class="fa fa-arrow-left"/>
+    
+    </a>
+
+    </div>
+
 
     {{-- <x-flasher/>  --}}
 
@@ -22,7 +36,7 @@
 
     </form>
 
-    <a href="{{route('todos.index')}}" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a>
+    {{-- <a href="{{route('todos.index')}}" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a> --}}
     
 
 @endsection
