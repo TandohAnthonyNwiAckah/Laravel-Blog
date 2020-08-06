@@ -8,6 +8,6 @@ class Todo extends Model
 {
     //
 
-protected $fillable = ['title','completed'];
+protected $fillable = ['title','completed','user_id'];
 
 }
