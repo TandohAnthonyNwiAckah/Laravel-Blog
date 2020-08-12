@@ -32,9 +32,22 @@
     <form class="py-5" method="post" action="{{route('todos.store')}}">
            @csrf
 
-          <input type="text" name="title" class="py-4 px-4 border rounder" />
+           <div class="py-1">
+          <input type="text" name="title" class="py-4 px-4 border rounder"  placeholder="Title"/>
+           </div>
+
+           <div class="py-1">
+
+          <textarea name="description" class="p-4 rounded border"  placeholder="Description"></textarea>
+     
+           </div>
+
+           <div class="py-1">
 
           <input type="submit" value="Create" class="p-4 border rounder"/>
+
+
+           </div>
 
     </form>
 
