@@ -30,10 +30,26 @@
            @csrf
            @method('patch')
 
-          <input type="text" name="title" value="{{$todo->title}}" class="py-4 px-4 border rounder" />
+
+           <div class="py-1">
+
+          <input type="text" name="title" class="py-4 px-4 border rounder"  value="{{$todo->title}}" placeholder= "Title" />
+           </div>
+
+           <div class="py-1">
+
+          <textarea name="description" class="p-4 rounded border"  placeholder="Description">{{$todo->description}}</textarea>
+     
+           </div>
+
+           <div class="py-1">
 
           <input type="submit" value="Update" class="p-4 border rounder"/>
 
+           </div>
+
+
+    
     </form>
 
     {{-- <a href="{{route('todos.index')}}" class="mx-5 my-5 py-2 px-2 bg-white-400 cursor-pointer text-black rounded border">Back </a> --}}
