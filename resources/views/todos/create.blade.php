@@ -47,26 +47,15 @@
             <div class="py-2">
 
 
-  <div class="flex justify-center  pb-4 px-4">
+         @livewire('step')
 
-    <h1 class="text-lg pb-4">Add steps for tasks</h1>
-
-     <span class="fa fa-plus-circle  px-2 py-2 cursor-pointer"/>
-
-{{-- 
-    <a href="{{route('todos.create')}}" class="mx-5  py-2  text-pink-400 cursor-pointer">
-
-        <span class="fa fa-plus-circle"/>
-    
-    </a> --}}
-
-    </div>
 
          {{-- <h1 class="text-lg"> Add Steps if required</h1>  --}}
 
-          <input type="text" name="step" class="py-4 px-4 border rounder"  placeholder="Describe Step"/>
-     
+        
+        
            </div>
+
 
            <div class="py-1">
 
@@ -76,6 +65,8 @@
            </div>
 
     </form>
+
+    
 
 
 
