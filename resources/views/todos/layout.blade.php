@@ -13,6 +13,9 @@
 
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
 
+
+    @livewireStyles
+
 </head>
 
 <body>
@@ -27,6 +30,9 @@
       
     
     </div>
+
+
+       @livewireScripts
 </body>
 
 </html>
