@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Todo;
+use App\Step;
 use App\Http\Requests\TodoCreateRequest;
 // use Illuminate\Support\Facades\Validator;
 
@@ -67,7 +68,24 @@ public function show(Todo $todo)
 
     public function update(TodoCreateRequest $req,Todo $todo)
     {   
+
+
+
+
     $todo->update(['title'=>$req->title]);
+
+        if ($req->stepName) {
+            foreach ($req->stepName as $key => $value) {
+                $id = $req->stepId[$key];
+                if (!$id) {
+                    $todo->steps()->create(['name' => $value]);
+                } else {
+                    $step = Step::find($id);
+                    $step->update(['name' => $value]);
+                }
+            }
+        }
+
 
      return redirect(route('todos.index'))->with('message','Updated successfully');
 
