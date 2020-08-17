@@ -10,16 +10,20 @@
     </div>
 
 
-    @for ($i = 0; $i <$steps; $i++)
+    {{-- @for ($i = 0; $i <count($steps); $i++) --}}
 
-    <div class="flex justify-center py-2">
+    @foreach ($steps as $step)
+        
+    <div class="flex justify-center py-2" wire:key={{$step}}>
     
-    <input type="text" name="step" class="py-4 px-4 border rounder"  placeholder="{{'Describe Step '.($i+1)}}"/>
+    <input type="text" name="step[]" class="py-4 px-4 border rounder"  placeholder="{{'Describe Step '.($step+1)}}"/>
 
-    <span class="fas fa-times text-red-400 p-2" />
+    <span class="fas fa-times text-red-400 p-2" wire:click="remove({{$step}})" />
      
     </div>
 
-    @endfor
+    {{-- @endfor --}}
+
+    @endforeach
 
 </div>

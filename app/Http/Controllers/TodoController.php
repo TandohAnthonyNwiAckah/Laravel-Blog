@@ -94,8 +94,16 @@ public function show(Todo $todo)
 
     public function destroy(Todo $todo)
     {
-      
+
+
+        $todo->steps->each->delete();
         $todo->delete();
+
+
+        
+        // return redirect()->back()->with('message', 'Task Deleted!');
+      
+        // $todo->delete();
 
         return redirect(route('todos.index'))->with('message', 'Task Deleted');
     }
@@ -132,9 +140,17 @@ public function show(Todo $todo)
 
         // dd(auth()->user()->todos);
 
-        auth()->user()->todos()->create($request->all());
+        // auth()->user()->todos()->create($request->all());
 
         // Todo::create($request->all());
+
+        $todo = auth()->user()->todos()->create($request->all());
+
+        if ($request->step) {
+            foreach ($request->step as $step) {
+                $todo->steps()->create(['name' => $step]);
+            }
+        }
 
         return redirect(route('todos.index'))->with('message', 'Todo created sucessfully');
     }

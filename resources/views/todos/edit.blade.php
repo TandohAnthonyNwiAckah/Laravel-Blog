@@ -42,6 +42,31 @@
      
            </div>
 
+
+
+
+
+            <div class="py-2">
+
+
+         {{-- @livewire('edit-step') --}}
+
+             @livewire('edit-step',['steps' => $todo->steps])
+
+
+         {{-- <h1 class="text-lg"> Add Steps if required</h1>  --}}
+
+        
+        
+           </div>
+
+
+
+
+
+
+
+
            <div class="py-1">
 
           <input type="submit" value="Update" class="p-4 border rounder"/>

@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('todos.index') }}">Todos</a>
+                    {{-- <a href="{{ route('todos.index') }}">Todos</a> --}}
                     <a href="{{route('todos.create')}}">Create Todos</a>
                     <a href="https://tanacom.io">Website</a>
                     <a href="https://github.com/TandohAnthonyNwiAckah">Github</a>
